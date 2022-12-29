@@ -4,6 +4,7 @@ body{
 h1{
     justify-content: center;
     align-self: center;
+    margin: 2.0rem 30rem 0;
 }
 
 #display-current-data{
@@ -38,4 +39,6 @@ h1{
 
 .history{
     display: block;
+    margin: 1.5rem 0;
+    width: 15rem;
 }
