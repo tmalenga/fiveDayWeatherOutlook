@@ -13,9 +13,24 @@ $(function () {
       console.log(userInput)
         fetch("https://api.openweathermap.org/data/2.5/weather?q="+ userInput +"&units=metric&appid=5a74568b4d5114e452a53cc6921752df")
           .then(response =>{return response.json();})
-          .then(console.log(response));     
-             
+          .then(currentWeather);              
                       
           });
+        
+          function currentWeather (response){
+            //console.log(response);
+            const { name } = response;
+            const { icon, description } = response.weather[0];
+            const { temp, humidity } = response.main;
+            const { speed } = response.wind;
+            //const { temp } = response.main;
+            // city = `${response.name}`;
+            // let tempEl = `${response.main.temp}`            
+            console.log(name, icon, description, temp, humidity, speed);
+            city.innerHTML = "<b>City</b>: " + name;
+            document.getElementById("current-temp").innerHTML = "<b>Temperature</b>: " + temp + " °C";
+            document.getElementById("current-wind").innerHTML = "<b>Wind speed</b>: " + speed + " mph";
+            document.getElementById("current-humidity").innerHTML = "<b>Humidity</b>: "+ humidity + "%";            
+        }
         
 })
