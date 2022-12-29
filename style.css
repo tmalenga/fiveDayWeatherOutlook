@@ -14,3 +14,14 @@ h1{
 #searchData{
     display: block;
 }
+
+.previousCity{ 
+    display:block;
+}
+
+.container-forecaste{
+    display: none;
+}
+.history{
+    display: block;
+}
